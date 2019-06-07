@@ -1,0 +1,73 @@
+#%RAML 0.8
+title: Sample API Documentation
+version: 1.0
+/api: 
+ /hi: 
+  description: Sample Rest Service is exposed
+  get:
+   description: It will get the data
+   headers:
+    apikey:
+     displayName: apikey
+     type: string
+    clientid:
+     displayName: clientid
+     type: string
+    responseformat:
+     displayName: responseformat
+     type: string
+   responses:
+    200:
+   body:
+    application/json:
+     example: |
+      {
+      “AccessToken”:” a7414394-6974-4fc6-8f86-d809abcb9d66”
+      "Statuscode":"200"
+      }
+ /hello: 
+  description: Sample Rest Service is exposed
+  get:
+   description: It will get the data
+   headers:
+    apikey:
+     displayName: apikey
+     type: string
+    clientid:
+     displayName: clientid
+     type: string
+    responseformat:
+     displayName: responseformat
+     type: string
+   responses:
+    200:
+   body:
+    application/json:
+     example: |
+      {
+      “AccessToken”:” a7414394-6974-4fc6-8f86-d809abcb9d66”
+      "Statuscode":"200"
+      }
+ /post: 
+  description: Sample Rest Service is exposed
+  post:
+   description: It will post the data
+   headers:
+    apikey:
+     displayName: apikey
+     type: string
+    clientid:
+     displayName: clientid
+     type: string
+    responseformat:
+     displayName: responseformat
+     type: string
+   responses:
+    200:
+   body:
+    application/json:
+     example: |
+      {
+      "name":"Ram"
+      }      
+      

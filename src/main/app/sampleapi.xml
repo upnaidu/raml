@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:oauth2-provider="http://www.mulesoft.org/schema/mule/oauth2-provider" xmlns:jersey="http://www.mulesoft.org/schema/mule/jersey" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/jersey http://www.mulesoft.org/schema/mule/jersey/current/mule-jersey.xsd
+http://www.mulesoft.org/schema/mule/oauth2-provider http://www.mulesoft.org/schema/mule/oauth2-provider/current/mule-oauth2-provider.xsd">
+   <!--  <oauth2-provider:config name="OAuth_provider_module" providerName="test" doc:name="OAuth provider module"/>
+    <oauth2-provider:config name="OAuth_provider_module1" clientStore-ref="my-client-store" authorizationEndpointPath="oauth/authorize" doc:name="OAuth provider module"/>
+    <oauth2-provider:config name="OAuth_provider_module2" doc:name="OAuth provider module"/> -->
+    <flow name="sampleapiFlow">
+        <logger message="Before Rest:::#[message]" level="INFO" doc:name="Logger"/>
+        <jersey:resources doc:name="REST">
+            <component class="restapi.RestApi"/>
+        </jersey:resources>
+        <logger message="Logger After Rest::::::::#[payload]" level="INFO" doc:name="Logger"/>
+    </flow>
+</mule>
